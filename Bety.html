@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Bety 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top right, #ffe0ec, #ffeaf5);
+      font-family: 'Georgia', serif;
+      color: #6d214f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      max-width: 90%;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4d6d;
+      transform: rotate(45deg);
+      animation: float 6s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4d6d;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bety, me interesa mucho compartir un momento contigo ❤️</h1>
+    <p>Porque entre turnos y madrugadas, tú sigues sanando el mundo…<br>  
+    y yo quisiera tener la dicha de sanar contigo también.<br><br>
+    ¿Quieres salir a comer conmigo? Esta vez, con todo mi corazón. 🌹</p>
+  </div>
+
+  <!-- corazones animados -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      let heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+      heart.style.opacity = Math.random();
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
